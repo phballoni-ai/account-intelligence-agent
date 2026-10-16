@@ -1,0 +1,24 @@
+{
+  "company": "Northstar Operations (fictional demo)",
+  "domain": "northstar.example",
+  "industry": "B2B software",
+  "employee_count": 120,
+  "target_industries": ["B2B software", "Insurance technology"],
+  "employee_range": [50, 500],
+  "evidence": [
+    {
+      "claim": "Demo company announced expansion to two additional markets.",
+      "excerpt": "Northstar Operations will enter two additional markets this year.",
+      "url": "https://northstar.example/news/expansion",
+      "kind": "growth",
+      "observed_on": "2026-10-01"
+    },
+    {
+      "claim": "Demo company described a workflow review initiative.",
+      "excerpt": "Our team is reviewing how operational handoffs are coordinated.",
+      "url": "https://northstar.example/blog/operations",
+      "kind": "operations",
+      "observed_on": "2026-10-02"
+    }
+  ]
+}

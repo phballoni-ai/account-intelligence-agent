@@ -2,7 +2,26 @@
 
 An **evidence-first account research CLI** for B2B business development. Turn a small, reviewed collection of public-source excerpts into a one-page executive briefing with citations, an ICP fit score, and role-specific conversation starters.
 
-> **Status: v0.1 offline MVP.** This version does **not** search the web, scrape LinkedIn, call an LLM, discover contacts, or send outreach. Those are future, opt-in integrations—not current capabilities. The included sample is fictional; no proprietary Optimalex/customer data is used.
+> **Status: v0.1 offline MVP.** This project runs **100% plug-and-play locally** without consuming any API credits or external tokens. The included sample is fictional; no proprietary data is used.
+
+## Quick Start (Plug-and-Play)
+
+Clone the repository and run the interactive CLI demo right away:
+
+```bash
+git clone https://github.com/phballoni-ai/account-intelligence-agent.git
+cd account-intelligence-agent
+
+# Run the interactive demo (Zero config, runs immediately)
+python demo.py
+```
+
+Or run the pipeline directly on custom inputs:
+
+```bash
+python -m src.account_intelligence --input examples/fictional_account.json --output brief.md
+python -m unittest discover -s tests -v
+```
 
 ## Why this matters
 
@@ -15,15 +34,6 @@ flowchart LR
   C --> D[Markdown executive brief]
   D --> E[Human review before outreach]
 ```
-
-## Quick start (Python 3.10+, standard library only)
-
-```bash
-python -m src.account_intelligence --input examples/fictional_account.json --output brief.md
-python -m unittest discover -s tests -v
-```
-
-The brief includes account context, attributed evidence, explained fit score, and suggested conversations for Operations, Sales and Finance. `brief.md` is a local output and is excluded from Git. For your own input, use only publicly available information you are allowed to use and respect each publisher's terms.
 
 ## Input contract
 
@@ -58,12 +68,6 @@ The brief includes account context, attributed evidence, explained fit score, an
 
 The result is a transparent **fit score (0–100)**, not a lead-conversion estimate. Conversation starters are generic prompts based on evidenced categories, not assertions that the company has a particular pain point. No invented contact names, savings figures, or performance claims.
 
-## Portfolio roadmap
+## Privacy and Security
 
-1. Add opt-in search/provider adapters with API keys loaded from environment variables, caching, rate limits, domain/robots/ToS checks, and source retrieval timestamps.
-2. Add optional LLM synthesis constrained to evidence IDs with output validation and unsupported-claim rejection.
-3. Add human approval, CRM export, evaluation set, and measured time/quality benchmarks. No automated unsolicited outreach.
-
-## Privacy and security
-
-Never commit customer lists, private data, credentials, or confidential documents. Never assume public access means permission to scrape a site. This demo uses fictional data, makes no external requests, and sends no messages.
+Never commit customer lists, private data, credentials, or confidential documents. This demo runs offline, makes no external network requests, and sends no messages.
